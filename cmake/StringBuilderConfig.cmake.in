@@ -1,0 +1,8 @@
+get_filename_component(StringBuilder_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+if(NOT TARGET StringBuilder::StringBuilder)
+    include("${StringBuilder_CMAKE_DIR}/StringBuilderTargets.cmake")
+endif()
+
+set(StringBuilder_LIBRARIES StringBuilder::StringBuilder)
